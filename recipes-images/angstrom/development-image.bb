@@ -6,6 +6,7 @@ require systemd-image.bb
 
 ARCHTOOLS = ""
 ARCHTOOLS_x86 = "dmidecode"
+ARCHTOOLS_arm = "dtc"
 
 IMAGE_INSTALL += " \
 	packagegroup-sdk-target \
@@ -22,17 +23,25 @@ IMAGE_INSTALL += " \
 	alsa-utils \
 	devmem2 \
 	iw \
+	blktool \
 	bonnie++ \
 	hdparm \
 	iozone3 \
+	mmc-utils \
 	iperf \
+	iperf3 \
 	lmbench \
 	rt-tests \
 	evtest \
 	bc \
 	fb-test \
+	libdrm-tests \
 	tcpdump \
 	procps \
+	strace \
+	kexec \
+	perf \
+	qemu \
 	util-linux \
 	coreutils \
 	ethtool \
