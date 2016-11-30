@@ -16,7 +16,9 @@ dirs755 += "${localstatedir}/cache \
 BASEFILESISSUEINSTALL = "do_install_angstromissue"
 
 do_install_angstromissue () {
-    echo ${MACHINE} > ${D}${sysconfdir}/hostname
+    if [ "${hostname}" ]; then
+        echo ${hostname} > ${D}${sysconfdir}/hostname
+    fi
 
     install -m 644 ${WORKDIR}/issue*  ${D}${sysconfdir}
         if [ -n "${DISTRO_NAME}" ]; then
